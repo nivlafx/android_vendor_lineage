@@ -52,7 +52,7 @@ except:
     device = product
 
 if not depsonly:
-    print("Device %s not found. Attempting to retrieve device repository from LineageOS Github (http://github.com/LineageOS)." % device)
+    print("Device %s not found. Attempting to retrieve device repository from RiceDroid Github (http://github.com/RiceDroid-Devices)." % device)
 
 repositories = []
 
@@ -72,7 +72,7 @@ def add_auth(githubreq):
         githubreq.add_header("Authorization","Basic %s" % githubauth)
 
 if not depsonly:
-    githubreq = urllib.request.Request("https://api.github.com/search/repositories?q=%s+user:LineageOS+in:name+fork:true" % device)
+    githubreq = urllib.request.Request("https://api.github.com/search/repositories?q=%s+user:RiceDroid-Devices+in:name+fork:true" % device)
     add_auth(githubreq)
     try:
         result = json.loads(urllib.request.urlopen(githubreq).read().decode())
@@ -193,11 +193,11 @@ def add_to_manifest(repositories):
             print('LineageOS/%s already fetched to %s' % (repo_name, repo_target))
             continue
 
-        print('Adding dependency: LineageOS/%s -> %s' % (repo_name, repo_target))
+        print('Adding dependency: RiceDroid/%s -> %s' % (repo_name, repo_target))
         project = ElementTree.Element("project", attrib = {
             "path": repo_target,
             "remote": "github",
-            "name": "LineageOS/%s" % repo_name,
+            "name": "RiceDroid/%s" % repo_name,
             "revision": repo_revision })
         lm.append(project)
 
@@ -211,7 +211,7 @@ def add_to_manifest(repositories):
 
 def fetch_dependencies(repo_path):
     print('Looking for dependencies in %s' % repo_path)
-    dependencies_path = repo_path + '/lineage.dependencies'
+    dependencies_path = repo_path + '/rice.dependencies'
     syncable_repos = []
     verify_repos = []
 
@@ -257,7 +257,7 @@ def get_default_or_fallback_revision(repo_name):
     print("Default revision: %s" % default_revision)
     print("Checking branch info")
 
-    githubreq = urllib.request.Request("https://api.github.com/repos/LineageOS/" + repo_name + "/branches")
+    githubreq = urllib.request.Request("https://api.github.com/repos/RiceDroid-Devices/" + repo_name + "/branches")
     add_auth(githubreq)
     result = json.loads(urllib.request.urlopen(githubreq).read().decode())
     if has_branch(result, default_revision):
