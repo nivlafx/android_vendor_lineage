@@ -89,4 +89,5 @@ endif
 # Extra packages
 PRODUCT_PACKAGES += \
     RepainterServicePriv \
+    OmniJaws \
     OPWidget
