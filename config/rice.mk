@@ -88,6 +88,7 @@ endif
 
 # Extra packages
 PRODUCT_PACKAGES += \
+    GameSpace \
     RepainterServicePriv \
     OmniJaws \
     OPWidget
