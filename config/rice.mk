@@ -34,6 +34,19 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
 
+# Rice properties - used by firmware version
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.rice.maintainer=$(RICE_MAINTAINER) \
+    ro.rice.code=$(RICE_CODE) \
+    ro.rice.packagetype=$(PACKAGE_BUILD_TYPE) \
+    ro.rice.releasetype=$(RICE_BUILDTYPE) \
+    ro.rice.version?=$(RICE_VERSION) \
+    ro.rice.chipset?=$(RICE_CHIPSET) \
+    ro.rice.build.version=$(LINEAGE_VERSION) \
+    ro.rice.display.version?=$(LINEAGE_DISPLAY_VERSION) \
+    ro.rice.platform_release_codename=$(RICE_FLAVOR) \
+    ro.ricelegal.url=https://www.manginasal.com/
+
 # Gboard
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_b?=1
