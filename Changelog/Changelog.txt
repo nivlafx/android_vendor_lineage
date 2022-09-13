@@ -1,0 +1,35 @@
+RiceDroid Update Changelogs
+Rice Code: 6.0
+Rice Version: IceCream - everyone knows what an icecream is.
+
+Legend:
+[] = Credits and thanks to
+UR = User's Requests
+MR = Maintainer's Request 
+CP = Cherry-pick changes under ricedroid additions
+MD = Co-authored/partly modified/minor code changes
+AOSP = Cherry-pick changes from AOSP gerrit/master branch
+
+===== Start of Changelog for version 6.0 =====
+
+==== riceDroid Additions ==== (will be updated after summarizing changes)
+* Initial opensource bringup with LineageOS as base
+* initial rushed source bringup due to limited time frame
+  - Credits and big thanks  goes to the following projects and 
+    people for the patches we have applied for the initial souce bringup:
+     * AOSPA
+     * Crdroid Android
+     * Corvus AOSP
+     * Derpfest-AOSP
+     * Evolution X
+     * GrapheneOS
+     * LineageOS
+     * Spark-Rom
+     * to the original author of the commits we have picked (will be updated over time and will be listed on simplified changelog)
+
+===== End of Changelog for version 6.0 =====
+
+Note no more changes will be pushed due to busy schedule of the repo maintainer.
+
+PS: if we missed some credits please let us know! Have a nice day.
+
