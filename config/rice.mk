@@ -105,4 +105,4 @@ PRODUCT_PACKAGES += \
     RepainterServicePriv \
     OmniJaws \
     OPWidget \
-    SimIcons
+    Updater
