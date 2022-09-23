@@ -6,30 +6,82 @@ Legend:
 [] = Credits and thanks to
 UR = User's Requests
 MR = Maintainer's Request 
-CP = Cherry-pick changes under ricedroid additions
+CP = Cherry-picked changes under ricedroid additions
 MD = Co-authored/partly modified/minor code changes
 AOSP = Cherry-pick changes from AOSP gerrit/master branch
 
 ===== Start of Changelog for version 6.0 =====
 
-==== riceDroid Additions ==== (will be updated after summarizing changes)
-* Initial opensource bringup with LineageOS as base
-* initial rushed source bringup due to limited time frame
-  - Credits and big thanks  goes to the following projects and 
-    people for the patches we have applied for the initial souce bringup:
-     * AOSPA
-     * Crdroid Android
-     * Corvus AOSP
-     * Derpfest-AOSP
-     * Evolution X
-     * GrapheneOS
-     * LineageOS
-     * Spark-Rom
-     * to the original author of the commits we have picked (will be updated over time and will be listed on simplified changelog)
+==== riceDroid Additions ==== 
+* [MD]Blur effect for Media artwork notification [jhonboy121]
+* [MD]Brightness Slider customizations and improvements [jhonboy121|neobuddy89|yukiscape|maxwen|ghostrider-reborn|timjosten]
+* Enabled and Redesigned Lockscreen Shortcuts [00day|StarkDroid|maxwen|darkobas]
+* Fixed volume panel lags when blur effects are enabled
+* Fixed Quicksettings dual tone theme ui glitches [Col_or|ReallSnow|ghostrider-reborn|althafvly|jhonboy121|XayahSuSuSu]
+* [MD]Gamespace support [nullxception|ezio84|cjybyjk|cjh1249131356|Genkzsz11]
+* [MD]Lockscreen Album Filter [eldainosor]
+* OpenWeather/Omnijaws System Weather service [StarkDroid|OmniRom|AICP]
+* Ported optimizations from Code Linaro [AOSPA]
+* Power Menu customizations
+    	-[CP] Blur effect on power menu [elluzion]
+    	-[CP] Advanced Power menu Options [lineageOS]
+    	-[MD] Add SystemUI Restart Option [idoybh|ezio84]
+* Privacy Indicators: Follow Light/Dark Settings
+* [MD]QS layout and count customizations [maxwen|neobuddy89|timjosten|spezzi77]
+* [MD]QS Styles [StarkDroid|Project Fluid]
+* [MD]Redesigned Battery and storage progressbars [StarkDroid|spkal01]
+* Redesigned volume panel with new customizations 
+ - [CP]Expandable Volume Panel with improvements [Ariank16a|ghostrider-reborn|mickaelmendes50|neobuddy89]
+ - [CP]Left Volume Panel toggle [alexxxdev]
+ - [CP]General Volume Panel Improvements and fixes [Ariank16a|jesec|Jertlok|luk1337|markakash|ProchyGaming]
+ - [MD]Redesigned Volume Panel [beingmishra|hpnightowl|markakash|ArianK16a|Starkdroid]
+ * Reworked Settings UI and configurable Dashboard Styles [spkal01|00day|ghostrider-reborn|AshutoshSundresh|beingmishra|Maitreya29|xyzuan]
+* [MD]Show QS data usage on Footer [AnkitGourav|Skulshady|imjyotiraditya|jhenrique09|ghostrider-reborn|neobuddy89]
+* SushiLauncher: Tempura Roll [crDroid|Derpfest|lineageOS|Project Kaleidoscope]
+* [MD]User interface Theming [StarkDroid|kdrag0n|neobuddy89|sb6596|spezzi77]
 
+==== Cherry-picked Additions ==== 
+* initial version based from lineageOS-20.0 and forks of crdroid system repositories [lineageOS|crDroid Android]
+=================================================================================================================
+* AlertSlider Support [neobuddy89|eyosen|ZVNexus|Chris Crump|Hikari-no-Tenshi|idoybh|libxzr]
+* Allow toggling privacy indicators [neobuddy89]
+* Black theme support [Althafvly|Jesec|SagarMakhar]
+* Burn-in protection [Arter97|jhonboy121]
+* Colored Statusbar Icons [Dil3mm4|spkal101|neobuddy89]
+* Dark/light theme support for UI elements [kdrag0n]
+* Disable QS on lockscreen [jhonboy121]
+* Double tap to sleep support [Thecrazyskull|Rashed97]
+* Enable monet picker [Linux4]
+* Enabled Session-based media actions for all apps
+* Hotspot and tethering improvements [sam3000|cjybyjk|jhonboy121]
+* Imported OTA update support from 12L [crDroid]
+* Integrate Google lens into Screenshot UI [AshutoshSundresh]
+* Lockscreen Charging info [maxwen|xyyz|Luccheto|rohanpurohit|calebcabob|Skulshady|thecrazyskull|karthic111|Stallix|neobuddy89]
+* Misc System runtime improvements [protonAOSP|xdevs23|lineageOS|crDroid]
+* LTE only mode [flawedworld|empratyush|inthewaves]
+* Navigation/Gestures customizations [jhonboy121|NurKeinNeid|cjh1249131356|703joko]
+* NetworkTraffic [Haus1|libxzr|ReallySnow|ghostrider-reborn|SpiritCroc|Stallix]
+* Notification Counters [XXMrHyde|jhonboy121|PacMM79]
+* Notchbarkiller and display cutouts support [xlxfoxxlx|MigmXyysd|thestinger]
+* Option to display data disabled indicator [varund7726]
+* OOS style clear all notification button [00day]
+* PixelPropsUtils [crDroid|evolutionX|Pixel Experience]
+* Pocket Mode feature [Laker|Skulshady|imjyotiraditya|paphonb|DennySPB|jhenrique09|RadixCube|TheStrix|Chris Lahaye|Alex Naidis|Kaluoshi]
+* QS footer actions customizations [neobuddy89|ezio84]
+* Redesigned Seekbars [Sagarmakhar]
+* Refresh Rate tile [jhonboy121|mikeNG|nullxception]
+* Removed system audio recording restrictions [jhenrique09]
+* Reticker feature [cjh1249131356|Dil3mm4|neobuddy89]
+* Ripple Effect switch with some fixes for some fp devices [Stealth1226|nullxception|ghostrider-reborn]
+* ScreenRecorder improvements and customizations [idoybh|ezio84|iusmac|eldainosor|nullbytepl|Sourajitk|nullxception|
+* Screenshot improvements [Demon000|ezio84|jesec|ganeshi4u|ghostrider-reborn|AshutoshSundresh]
+* Statusbar Background Chip [StarkDroid]
+* Statusbar and QuickSettings customizations [LineageOS|DennySPB|calebcabob|neobuddy89|thestrix|jhonboy121|Myself5|ezio874|703joko|ri5Hi|spezzi77|xyyz]
+* SystemUI transparency [neobuddy90|spkal01]
+* Three-fingers-swipe to screenshot [Haibo Gu|aryanataandi]
+* UDFPS support and customizations [credits to the authors listed here https://github.com/RiceDroid/android_frameworks_base/commit/f9e09159816bd23eb70e5681a89590a7c52a8458|TheScrarastic |luk1337|trpsl|ArianK16a0|kdrag0n|jhonboy121]
+* VoLTE and Vowifi support [SargarMakhar|ghostrider-reborn|imjyotiraditya|Wejie Wang|timjosten]
 ===== End of Changelog for version 6.0 =====
-
-Note no more changes will be pushed due to busy schedule of the repo maintainer.
 
 PS: if we missed some credits please let us know! Have a nice day.
 
