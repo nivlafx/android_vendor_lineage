@@ -15,6 +15,10 @@ AOSP = Cherry-pick changes from AOSP gerrit/master branch
 ==== riceDroid Additions ==== 
 * [MD]Blur effect for Media artwork notification [jhonboy121]
 * [MD]Brightness Slider customizations and improvements [jhonboy121|neobuddy89|yukiscape|maxwen|ghostrider-reborn|timjosten]
+* DeskClock:
+  - [CP]analog clock as default view [beingmishra]
+  - reworked widgets design to google material you (cheap copy)
+  - [CP]sync with the latest lineage-20.0 changes [BadDaemon|lineageOS]
 * Enabled and Redesigned Lockscreen Shortcuts [00day|StarkDroid|maxwen|darkobas]
 * Fixed volume panel lags when blur effects are enabled
 * Fixed Quicksettings dual tone theme ui glitches [Col_or|ReallSnow|ghostrider-reborn|althafvly|jhonboy121|XayahSuSuSu]
@@ -47,16 +51,18 @@ AOSP = Cherry-pick changes from AOSP gerrit/master branch
 * Allow toggling privacy indicators [neobuddy89]
 * Black theme support [Althafvly|Jesec|SagarMakhar]
 * Burn-in protection [Arter97|jhonboy121]
+* Colors/Monet improvements [kdrag0n]
 * Colored Statusbar Icons [Dil3mm4|spkal101|neobuddy89]
 * Dark/light theme support for UI elements [kdrag0n]
 * Disable QS on lockscreen [jhonboy121]
 * Double tap to sleep support [Thecrazyskull|Rashed97]
 * Enable monet picker [Linux4]
-* Enabled Session-based media actions for all apps
+* Enabled Session-based media actions for all apps [ghostrider-reborn]
 * Hotspot and tethering improvements [sam3000|cjybyjk|jhonboy121]
 * Imported OTA update support from 12L [crDroid]
+* Inter as default font + better custom font rendering (from ProtonAOSP) [kdrag0n]
 * Integrate Google lens into Screenshot UI [AshutoshSundresh]
-* Lockscreen Charging info [maxwen|xyyz|Luccheto|rohanpurohit|calebcabob|Skulshady|thecrazyskull|karthic111|Stallix|neobuddy89]
+* Lockscreen Charging info [maxwen|xyyz|Luccheto|rohanpurohit|calebcabob|Skulshady|thecrazyskull|karthic111|Stallix|neobuddy89|amartinz|jhenrique09|skulshady]
 * Misc System runtime improvements [protonAOSP|xdevs23|lineageOS|crDroid]
 * LTE only mode [flawedworld|empratyush|inthewaves]
 * Navigation/Gestures customizations [jhonboy121|NurKeinNeid|cjh1249131356|703joko]
@@ -71,10 +77,12 @@ AOSP = Cherry-pick changes from AOSP gerrit/master branch
 * Redesigned Seekbars [Sagarmakhar]
 * Refresh Rate tile [jhonboy121|mikeNG|nullxception]
 * Removed system audio recording restrictions [jhenrique09]
+* Repainter service support [kdrag0n]
 * Reticker feature [cjh1249131356|Dil3mm4|neobuddy89]
 * Ripple Effect switch with some fixes for some fp devices [Stealth1226|nullxception|ghostrider-reborn]
 * ScreenRecorder improvements and customizations [idoybh|ezio84|iusmac|eldainosor|nullbytepl|Sourajitk|nullxception|
 * Screenshot improvements [Demon000|ezio84|jesec|ganeshi4u|ghostrider-reborn|AshutoshSundresh]
+* Side Fingerprint fixes [ghostrider-reborn|luk1337]
 * Statusbar Background Chip [StarkDroid]
 * Statusbar and QuickSettings customizations [LineageOS|DennySPB|calebcabob|neobuddy89|thestrix|jhonboy121|Myself5|ezio874|703joko|ri5Hi|spezzi77|xyyz]
 * SystemUI transparency [neobuddy90|spkal01]
