@@ -124,7 +124,11 @@ PRODUCT_PACKAGES += \
     OPWidget \
     Updater \
     SettingsIntelligenceGooglePrebuilt
-    
+
+# Google Ext Servive
+PRODUCT_COPY_FILES += \
+   vendor/lineage/prebuilt/etc/permissions/privapp-permissions-lineage-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lineage-system.xml
+
 ifeq ($(TARGET_USE_PIXEL_FINGERPRINT), true)
 BUILD_FINGERPRINT := "google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys"
 
