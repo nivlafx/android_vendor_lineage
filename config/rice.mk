@@ -122,7 +122,8 @@ PRODUCT_PACKAGES += \
     RepainterServicePriv \
     OmniJaws \
     OPWidget \
-    Updater
+    Updater \
+    SettingsIntelligenceGooglePrebuilt
     
 ifeq ($(TARGET_USE_PIXEL_FINGERPRINT), true)
 BUILD_FINGERPRINT := "google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys"
