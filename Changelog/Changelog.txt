@@ -17,6 +17,7 @@ AOSP = Cherry-pick changes from AOSP gerrit/master branch
 * [AOSP]Performance improvements by tweaking critical android runtime properties
 * Charging animation improvements 
 * Fixed monet picker implementation (not a native AOSP bug, was actually caused by a typo ~ we apologize for this >.<)
+* [MD] Extended Pixel Experience features support ~ now you can install some google apps on playstore though some of them will still crash due to hardware support or missing dependencies (its like your using xmlpak but only pixel stuffs) [RadekBledowski]
 * Introducing Extended Monet themes - inspired by kdrag0n's repainter app, now doesnt depend on black theme framework (users can just use black theme or extended monet themes on top (though we doubt colors will merge or smthing).
   - Vivid themes - replaces neutral monet shades with vibrant ones creating a darker/vibrant color effect
   - Snow Paint Drop - inspired by snowdrop theme on repainter app, a drop of paint in the snow.
@@ -25,9 +26,14 @@ AOSP = Cherry-pick changes from AOSP gerrit/master branch
 * [MD]Improved QS styles implementation - [elluzion|Project Fluid]
   - rework qs styles designs
   - now themes lockscreen and notification panel elements
+* [MD] Quick Settings System Info [ZeNiXxX|mikeNG|eyosen]
 * Redesigned lockscreen buttons - inspired from OneUI 5.0
 * Redesigned small lockscreen clock and AOSP's smartspace view 
 * Refactored dark mode switch colors
+* [MD] Status bar Logo customizations [neobuddy89|AICP|eyosen|timjosten|travarilo]
+* Volumed panel improvements
+  - revamped per-app volume support button style
+  - improved buttons spacing 
 * Weather: Improve system integration
  - made configurations more flexible by splitting the implementation for
     - Lockscreen weather 
@@ -41,9 +47,11 @@ AOSP = Cherry-pick changes from AOSP gerrit/master branch
 * Added CPU info overlay and qs tile [maxwen|mydongistiny]
 * Added Dataswitch qs tile [Myself5|neobuddy89|Shevt|andrewfluck|Herna1994|frap129]
 * Added FPS info qs tile [darkobas|jhonboy121]
+* Added kill button to notification guts [dankoman30]
 * Added support for bypassing secure windows [libxzr]
 * Added support for Google home controls feature [anayw2001]
 * Allowed usage of wireless charging animation for wired charging [SKULSHADY]
+* Ambient pulse support [kldoc|darkobas|idoybh|HerrscherOfDarkness|xNombre|ezio84]
 * Better permissions handling [kdrag0n]
 * Fingerprint authentication vibration toggle [Beanstown]
 * Fixed and cleanup of UDFPS implementation [xNombre|neobuddy89|AnierinBliss]
@@ -57,15 +65,25 @@ AOSP = Cherry-pick changes from AOSP gerrit/master branch
 * Hide power menu on secure lockscreen [Altaf-Mahdi] 
 * Internet Dialog improvements [ghostrider-reborn]
 * Implemented UDFPS framework dimming support [cjybyjk]
+* Monet-themed riceDroid bootanimation [HrX03|saavedra3]
+* Monet theme engine customizations [kdrag0n|neobuddy89|jhonboy121]
+* Per-app volume support + multi audio control support [eldainosor|cjybyjk]
 * QuickSettings theming improvements and animation fixes [ghostrider-reborn|AndyCGYan|althafvly|maniac103]
 * Removed List dividers on some UI elements [neobuddy89]
 * Resolve GMS permission denials [cjh1249131356]
 * ScreenRecording HEVC support and improvements [idoybh]
+* Screen Off animations [AgentFabulous|neobuddy89|Albinoman887]
+* Smart Pixels support [pelya|frap129|adindotdev|anayw2001|neobuddy89]
 * Sync with the latest lineage 20.0 source changes
   - LineageParts hw buttons customizations [lineageOS team]
   - Extended Device key/gesture actions [neobuddy89|rohanpurohit|LorDClockaN|ezio84|Alex Cruz|lineageOS team]
 * torch haptic feedback [alk3pInjection]
 * Wifi and bluetooth timeout [Uldiniad]
+
+==== Bug Fixes ====
+* resolved an issue where a binary was causing selective app crash/es on some devices
+* resolved a sushilauncher layout issue where all apps suggestions header was overlapping with the all apps searchbar
+* resolved gphotos spoofing not working when a tweak/module/GMS package has pixel_2022_midyear_experience.xml
 
 ===== End of Changelog for version 7.0 =====
 
