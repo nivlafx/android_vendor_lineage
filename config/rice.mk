@@ -99,6 +99,17 @@ else
 PRODUCT_COPY_FILES += vendor/lineage/bootanimation/bootanimation.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 endif
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.dexopt.boot=verify \
+    pm.dexopt.first-boot=quicken \
+    pm.dexopt.install=speed-profile \
+    pm.dexopt.bg-dexopt=everything
+
+ifneq ($(AB_OTA_PARTITIONS),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    pm.dexopt.ab-ota=quicken
+endif
+
 # Extra packages
 PRODUCT_PACKAGES += \
     GameSpace \
