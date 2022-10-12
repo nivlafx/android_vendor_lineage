@@ -4,16 +4,23 @@ PRODUCT_VERSION_MINOR = 0
 RICE_FLAVOR := Tiramisu
 RICE_VERSION := Jelly
 RICE_CODE := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)
-RICE_PACKAGE_TYPE ?= AOSP
 
-ifeq ($(RICE_OFFICIAL),true)
+ifeq ($(RICE_OFFICIAL), true)
     RICE_BUILDTYPE := OFFICIAL
 else
     RICE_BUILDTYPE := COMMUNITY
 endif
 
-ifeq ($(WITH_GMS),true)
-    RICE_PACKAGE_TYPE := PIXEL
+ifeq ($(WITH_GMS), true)
+    ifeq ($(TARGET_CORE_GMS), true)
+       RICE_PACKAGE_TYPE ?= CORE
+    else ifeq ($(TARGET_OPTOUT_GOOGLE_TELEPHONY), true)
+       RICE_PACKAGE_TYPE ?= GMS
+    else
+       RICE_PACKAGE_TYPE ?= PIXEL    
+    endif
+else
+       RICE_PACKAGE_TYPE ?= AOSP 
 endif
 
 LINEAGE_BUILD_DATE := $(shell date -u +%y%m%d%H)
