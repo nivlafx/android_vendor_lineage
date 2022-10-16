@@ -122,8 +122,7 @@ PRODUCT_PACKAGES += \
     RepainterServicePriv \
     OmniJaws \
     OPWidget \
-    Updater \
-    SettingsIntelligenceGooglePrebuilt
+    Updater
 
 # Google Ext Servive
 PRODUCT_COPY_FILES += \
