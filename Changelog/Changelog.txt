@@ -1,6 +1,6 @@
 RiceDroid Update Changelogs
-Rice Code: 7.0
-Rice Version: Jelly - want something sweet?
+Rice Code: 7.5
+Rice Version: Kalamay - is a sticky and sweet delicacy. It is made of glutinous rice flour, coconut milk and sugar, usually palm or brown sugar. Some kalamay were added with peanuts to enhance its flavor for a more appealing taste.
 
 Legend:
 [] = Original author(s), credits and thanks to
@@ -10,100 +10,45 @@ CP = Cherry-picked changes under ricedroid additions
 MD = Co-authored/partly modified/minor code changes
 SQUASH = squashed changes
 
-===== Start of Changelog for version 7.0 =====
-
+===== Start of Changelog for version 7.5 =====
 ==== riceDroid Additions ==== 
-* Android October security patch
-* [AOSP]Performance improvements by tweaking critical android runtime properties
-* Charging animation improvements 
-* Fixed monet picker implementation (not a native AOSP bug, was actually caused by a typo ~ we apologize for this >.<)
-* [MD] Extended Pixel Experience features support ~ now you can install some google apps on playstore though some of them will still crash due to hardware support or missing dependencies (its like your using xmlpak but only pixel stuffs) [RadekBledowski] 
-* Introducing Extended Monet themes - inspired by kdrag0n's repainter app, now doesnt depend on black theme framework (users can just use black theme or extended monet themes on top (though we doubt colors will merge or smthing).
-  - Vivid themes - replaces neutral monet shades with vibrant ones creating a darker/vibrant color effect
-  - Snow Paint Drop - inspired by snowdrop theme on repainter app, a drop of paint in the snow.
-  - Espresso - a monet theme that aims to bring antique/vintage color effect
-* Lockscreen media filter improvements
-* [MD]Improved QS styles implementation - [elluzion|Project Fluid]
-  - rework qs styles designs
-  - now themes lockscreen and notification panel elements
-* [SQUASH] Performance/UI performance improvements [xdev23|Pulkit077|RealJohnGalt|gotenksIN]
-* [MD] Quick Settings System Info [ZeNiXxX|mikeNG|eyosen]
-* Redesigned lockscreen buttons - inspired from OneUI 5.0
-* Redesigned small lockscreen clock and AOSP's smartspace view 
-* Refactored dark mode switch colors
-* [MD] Status bar Logo customizations [neobuddy89|AICP|eyosen|timjosten|travarilo]
-* Volumed panel improvements
-  - revamped per-app volume support button style
-  - improved buttons spacing 
-* Weather: Improve system integration
- - made configurations more flexible by splitting the implementation for
-    - Lockscreen weather 
-    - SushiLauncher
-    - SystemUI/QuickSettings Panel
- - refactored layouts and added more options
-    - Added an option to display weather condition
+* Android October security patch - Android-13.0.0_r11
+* [MD]: Added Custom DNS providers
+  - [CP]: Add cloudflare dns provider - [chirayudesai]
+  - [CP]: Add Adguard dns provider - [goshawk22]
+  - Added OpenDNS, Cleanbrowsing, Quad9 DNS
+* Added dark theme support to more UI/UX elements
+* Dashboard Styles: 
+  - Integrated OOS 13 design to sushi palette theme
+* Dropped colorkt monet implementation in favor a aosp monet (breaks colorschemes)
+* Lineageparts Buttons:
+  - added taskbar switch
+* SushiLauncher
+   - implemented google material you color palettes
+   - temporarily fixed google calendar and clock themed icons support by using static themed icons
 
 ==== Cherry-picked Additions - changes we've cherry-picked from other projects ==== 
-* Adaptive Playback [Stylogey|imjyotiraditya]
-* Added Compass qs tile [romanbb]
-* Added CPU info overlay and qs tile [maxwen|mydongistiny]
-* Added Dataswitch qs tile [Myself5|neobuddy89|Shevt|andrewfluck|Herna1994|frap129]
-* Added FPS info qs tile [darkobas|jhonboy121]
-* Added kill button to notification guts [dankoman30]
-* Added support for bypassing secure windows [libxzr]
-* Added support for Google home controls feature [anayw2001]
-* Allowed usage of wireless charging animation for wired charging [SKULSHADY]
-* Ambient pulse support [kldoc|darkobas|idoybh|HerrscherOfDarkness|xNombre|ezio84]
-* Battery style improvements [StarkDroid]
-* Better permissions handling [kdrag0n]
-* Fingerprint authentication vibration toggle [Beanstown]
-* Fixed and cleanup of UDFPS implementation [xNombre|neobuddy89|AnierinBliss]
-* Fixed flickering when using one handed mode [timjosten]
-* Fixed incall proximity not turning the display off [sooti]
-* Fixed random crash on unlock animation [markakash]
-* Fixed toast background color not changing with theme [SuperDroidBond]
-* Gesture customizations
-  - hide arrow for back gesture [eyosen]
-  - Optional haptic feedback for back gesture [neobuddy89]
-* Hide power menu on secure lockscreen [Altaf-Mahdi] 
-* Immersive navigation [DennySPB|vjsantojaca|Kra1o5|ghostider-reborn]
-* Implemented UDFPS framework dimming support [cjybyjk]
-* Improved FPS info tile [StarkDroid]
-* Internet Dialog improvements [ghostrider-reborn]
-* Incall Vibration Options [Beanstown]
-* Monet-themed riceDroid bootanimation [HrX03|saavedra3]
-* Monet theme engine customizations [kdrag0n|neobuddy89|jhonboy121|anayw2001]
-* Per-app volume support + multi audio control support [eldainosor|cjybyjk]
-* Music Pulse animations/visualizer [neobuddy89|bigrushdog|spezi77|Darkjoker|Stallix|ProchyGaming|TikkiX2] 
-* QuickSettings theming improvements and animation fixes [ghostrider-reborn|AndyCGYan|althafvly|maniac103]
-* Removed List dividers on some UI elements [neobuddy89]
-* Resolve GMS permission denials [cjh1249131356]
-* ScreenRecording HEVC support and improvements [idoybh]
-* Screen Off animations [AgentFabulous|neobuddy89|Albinoman887]
-* Smart Pixels support [pelya|frap129|adindotdev|anayw2001|neobuddy89]
-* Sync with the latest lineage 20.0 source changes
-  - LineageParts hw buttons customizations [lineageOS team]
-  - Extended Device key/gesture actions [neobuddy89|rohanpurohit|LorDClockaN|ezio84|Alex Cruz|lineageOS team]
-* torch haptic feedback [alk3pInjection]
-* Wifi and bluetooth timeout [Uldiniad]
-* Wifi Standard icon [ReallySnow|color597|KujouYuko]
+* Ability to resize qs clock [spkal101|StarKDroid]
+* Attestation and fingerprint changes 
+ - applied fixes to bypass google's key attestations [Dyneteve|dereference23]
+ - switched to cheetah fingerprint [Stallix]
+ - pixel spoofing changes [neobudy89]
+* Collapsing toolbar animation improvements [elluzion]
+* Pixel 7 series wallpapers from https://t.me/gn_chat_en/43984 extracted by Kuba [nullbytepl]
+* SushiLauncher
+ - Added opacity customizations [neobuddy89]
+ - Add toggle to use dark status bar on Home screen [paphonb|Ratoriku]
+ 
+====== Bug fixes =====
+* Attempt to fix sushi launcher memory leaks that were causing performance regressions
+* Fixed an issue where opening an app causes black screen to some devices
+* Updater app: fixed wrong changelog URL and broken ota json 
+* Wallpaper and styles: Fixed color picker section overlapping with wallpaper preview when scrolling
 
-==== Bug Fixes ====
-* resolved an issue where a binary was causing selective app crash/es on some devices
-* resolved a sushilauncher layout issue where all apps suggestions header was overlapping with the all apps searchbar
-* resolved gphotos spoofing not working when a tweak/module/GMS package has pixel_2022_midyear_experience.xml
+Special mention:
+Nazar Fadillah Sevtiana - photographer/owner of the modified default wallpaper for v7.5
 
- ====October 13, 2022 PST ====
-* reverted notification background changes
-* removed fingerprint/lock icon background 
-* [CP] fixes for smart charging implementation [Lucchetto|neobuddy89]
-
- ====October 15, 2022 PST ====
-* Fixed launcher memory leak that is causing system slowdown and screen glicthes when using navigation gestures
-* [CP] Fixed random gesture freezes while swiping recents app tasks [libxzr]
-* Fixed bootloop when a code linaro optimization is enabled
-
-===== End of Changelog for version 7.0 =====
+===== End of Changelog for version 7.5 =====
 
 PS: if we missed some credits please let us know! Have a nice day.
 
