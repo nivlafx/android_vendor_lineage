@@ -206,7 +206,11 @@ endif
 # Dex/ART optimization
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings \
-    Launcher3QuickStep \
+    Dialer \
+    Contacts \
+    DeskClock \
+    messaging \
+    Eleven \
     SystemUI
 
 # Don't compile SystemUITests
