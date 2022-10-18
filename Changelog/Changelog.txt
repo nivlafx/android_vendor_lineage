@@ -12,6 +12,7 @@ SQUASH = squashed changes
 
 ===== Start of Changelog for version 7.5 =====
 ==== riceDroid Additions ==== 
+* Allowed modifying colorschemes
 * Android October security patch - Android-13.0.0_r11
 * [MD]: Added Custom DNS providers
   - [CP]: Add cloudflare dns provider - [chirayudesai]
@@ -21,6 +22,8 @@ SQUASH = squashed changes
 * Dashboard Styles: 
   - Integrated OOS 13 design to sushi palette theme
 * Dropped colorkt monet implementation in favor a aosp monet (breaks colorschemes)
+* Improved About phone section [IacobIonut01]
+* Introducing system boost feature
 * Lineageparts Buttons:
   - added taskbar switch
 * SushiLauncher
@@ -28,12 +31,15 @@ SQUASH = squashed changes
    - temporarily fixed google calendar and clock themed icons support by using static themed icons
 
 ==== Cherry-picked Additions - changes we've cherry-picked from other projects ==== 
-* Ability to resize qs clock [spkal101|StarKDroid]
+* Ability to resize qs and statusbar clock [spkal101|StarKDroid]
 * Attestation and fingerprint changes 
  - applied fixes to bypass google's key attestations [Dyneteve|dereference23]
  - switched to cheetah fingerprint [Stallix]
  - pixel spoofing changes [neobudy89]
 * Collapsing toolbar animation improvements [elluzion]
+* Double tap to trigger doze [SKULSHADY]
+* Enable AOD on charging only [darkobas|jhonboy121]
+* Lockscreen animation improvements [kdrag0n]
 * Pixel 7 series wallpapers from https://t.me/gn_chat_en/43984 extracted by Kuba [nullbytepl]
 * SushiLauncher
  - Added opacity customizations [neobuddy89]
