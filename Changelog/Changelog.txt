@@ -21,17 +21,21 @@ SQUASH = squashed changes
 * Added dark theme support to more UI/UX elements
 * Dashboard Styles: 
   - Integrated OOS 13 design to sushi palette theme
-* Dropped colorkt monet implementation in favor a aosp monet (breaks colorschemes)
+* Dropped colorkt monet implementation in favor a aosp monet colorschemes
 * Improved About phone section [IacobIonut01]
 * Introducing system boost feature
 * Lineageparts Buttons:
   - added taskbar switch
+* Settings app improvements
+  - new banner on about phone settings
+  - preference fragments are now not expanded by default (unless user swipes down)
 * SushiLauncher
    - implemented google material you color palettes
    - temporarily fixed google calendar and clock themed icons support by using static themed icons
 
 ==== Cherry-picked Additions - changes we've cherry-picked from other projects ==== 
 * Ability to resize qs and statusbar clock [spkal101|StarKDroid]
+* Allow to suppress notifications sound/vibration if screen is ON [ezio84]
 * Attestation and fingerprint changes 
  - applied fixes to bypass google's key attestations [Dyneteve|dereference23]
  - switched to cheetah fingerprint [Stallix]
@@ -39,7 +43,10 @@ SQUASH = squashed changes
 * Collapsing toolbar animation improvements [elluzion]
 * Double tap to trigger doze [SKULSHADY]
 * Enable AOD on charging only [darkobas|jhonboy121]
+* Fixed min refresh rate to 60hz in auto mode [Tejasvp25]
+* Follow Dark/light theme settings for safe dialog [Pulkit077]
 * Lockscreen animation improvements [kdrag0n]
+* Phone ringtone for Multi sim devices [Ting yu]
 * Pixel 7 series wallpapers from https://t.me/gn_chat_en/43984 extracted by Kuba [nullbytepl]
 * SushiLauncher
  - Added opacity customizations [neobuddy89]
