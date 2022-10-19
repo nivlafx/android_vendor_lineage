@@ -38,6 +38,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.rice.maintainer=$(RICE_MAINTAINER) \
     ro.rice.code=$(RICE_CODE) \
+    ro.riseui.code=$(RISE_CODE) \
     ro.rice.packagetype=$(RICE_PACKAGE_TYPE) \
     ro.rice.releasetype=$(RICE_BUILDTYPE) \
     ro.rice.version?=$(RICE_VERSION) \
