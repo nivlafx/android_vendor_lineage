@@ -1,8 +1,12 @@
 ===================================
-  Source Changes as of 11-10-2022
+  Source Changes as of 11-11-2022
 ===================================
 
   * android
+  - rice: Track our fork of device/qcom/sepolicy  [minaripenguin37]
+  - manifest: Sort and organize manifest entries  [minaripenguin37]
+  - manifest: Track our sm8150 display hal  [DarkJoker360]
+  - manifest: Track our frameworks ims fork  [DarkJoker360]
   - lineage: Drop darwin GCC toolchains  [Michael Bestas]
   - lineage: Sync clang-r416183b prebuilts  [Michael Bestas]
   - lineage: Move inline kernel build repos to separate section  [Michael Bestas]
@@ -14,6 +18,8 @@
   - rice: Track AndroidSystemBlur library  [minaripenguin37]
 
   * android_art
+  - imgdiag: add memory page index for dirty entries  [Dmitrii Ishcheikin]
+  - Clear profile when switching between boot image profile and app profile  [Jiakai Zhang]
   - art_cc_defaults: use whole program vtables lto optimization  [John Galt]
   - ART: Add static helpers for ArtMethod's access flags.  [Vladimir Marko]
   - Reland "Make compiler/optimizing/ symbols hidden."  [Vladimír Marko]
@@ -144,6 +150,51 @@
   - common: introduce app lock [2/4]  [jhonboy121]
   - common: Allow Settings to set powerusage provider prop  [DennySPb]
 
+  * android_device_qcom_sepolicy
+  - Merge tag 'LA.QSSI.13.0.r1-07600.02-qssi.0' into thirteen  [minaripenguin37]
+  - Merge 5ee01b621c1a5f41c722b03b7d1cf1a3f785efd6 on remote branch  [Linux Build Service Account]
+
+  * android_device_qcom_sepolicy_vndr
+  - sepolicy_vndr: generic: Fix compilation issues for newer upgrade  [Himanshu Agrawal]
+  - sepolicy_vndr: Fix qtr_sdk_use macro definition  [LuK1337]
+  - sepolicy_vndr: generic: Fix compile after merge  [Alexander Koskovich]
+  - sepolicy_vndr: legacy: Label QTI USB HAL  [LuK1337]
+  - sepolicy_vndr: qva: Update QTI USB HAL to v1.3  [Alexander Koskovich]
+  - sepolicy: Fix genfscon for kona  [MoetaYuko]
+  - sepolicy_vndr: Remove duplicate hwservice_contexts  [Bruno Martins]
+  - sepolicy_vndr: legacy: Update vendor property types  [Bruno Martins]
+  - sepolicy_vndr: qva: Allow vendor_cnd to read wifi_hal_prop  [Arian]
+  - sepolicy_vndr: qva: Don't protect vendor_hal_qesdhal_hwservice  [Marco Marinho]
+  - sepolicy_vndr: qva: Remove mediatranscoding sepolicy  [Arian]
+  - sepolicy_vndr: qva: Update vendor property types  [Arian]
+  - sepolicy_vndr: qva: Update sxrhalservice label for updated qssi sepolicy  [Arian]
+  - sepolicy_vndr: test: Add vendor prefix to qti-testscripts  [Arian]
+  - sepolicy_vndr: generic: Add app_data_file_type to vendor_radio_data_file  [Arian]
+  - sepolicy: Allow access for hal_graphics_composer_default.  [Vinoth Jayaram]
+  - sepolicy_vndr: Add drm clearkey policies  [Eruvaram Kumar Raja Reddy]
+  - sepolicy_vndr: Fix compilation issues for newer upgrade  [Himanshu Agrawal]
+  - sepolicy_vndr: Switch to SYSTEM_EXT_{PUBLIC,PRIVATE}_SEPOLICY_DIRS  [Michael Bestas]
+  - sepolicy_vndr: Switch to BOARD_VENDOR_SEPOLICY_DIRS  [Aayush Gupta]
+  - sepolicy_vndr: Include Lineage-specific QCOM sepolicy  [Pig]
+  - sepolicy_vndr: Remove QCOM guards  [Pig]
+
+  * android_external_arm-optimized-routines
+  - Merge branch 'master' into thirteen  [minaripenguin37]
+  - pl/math/test: Simplify ulp and bench macros  [Joe Ramsay]
+  - pl/math: Add vector/Neon expm1  [Joe Ramsay]
+  - pl/math: Add scalar expm1  [Joe Ramsay]
+  - pl/math: Add scalar and vector/Neon coshf  [Add joeram01]
+  - Make fenv checking dependent on WANT_ERRNO  [Joe Ramsay]
+  - Fix tests for WANT_SVE_MATH=1  [Joe Ramsay]
+  - pl/math: Add vector/Neon sinhf  [Joe Ramsay]
+  - Add WANT_ERRNO config option  [Joe Ramsay]
+  - pl/math: Update ULP threshold for acosh  [Joe Ramsay]
+  - pl/math: Add scalar sinhf  [Joe Ramsay]
+  - pl/math: Add vector/Neon expm1f  [Joe Ramsay]
+  - pl/math: Update ULP thresholds for atan/atan2  [Joe Ramsay]
+  - pl/math: Add scalar expm1f  [Joe Ramsay]
+  - pl/math: Update ULP threshold for erfc (all variants) and scalar log1p  [Joe Ramsay]
+
   * android_frameworks_av
   - Updated max rotational velocity of head tracking to 0.8 rad/s for smooth auto-recentering  [Nikhil Bhanu]
   - DNM Revert "Camera: Add support for readout timestamp"  [Pranav Vashi]
@@ -157,6 +208,36 @@
   - Fix errorprone warnings that should be errors  [Cole Faust]
 
   * android_frameworks_base
+  - base: Add bool to enable/disable doze by default  [Pranav Vashi]
+  - UdfpsController: make sure to continue with onAcquired even when pulsing  [jhonboy121]
+  - Revert "udfps: Trigger onFingerDown with regular action down events too"  [Anay Wadhera]
+  - Add FULL_ACCESS_CELL_BROADCAST_HISTORY permission to shell for CellBroadcast MTS test.  [Hyein Yu]
+  - Catch exceptions from prepareUserStorage() in loadPrivatePackagesInner()  [Eric Biggers]
+  - SystemUI: Get rid of unnecessary broadcast for IMS  [Pranav Vashi]
+  - SystemUI: Use ImsStateCallback instead of FeatureConnector  [Weijie Wang]
+  - telephony: SmsMessage: Bring newFromCDS method back  [SamarV-121]
+  - incfs: tolerate either ptrdiff_t or size_t for std::span  [Ryan Prichard]
+  - Fix a couple of NPEs in AdbDebuggingManager.AdbDebuggingHandler  [Prameet Shah]
+  - Also reset the dropbox rate limiter in BootReceiver in addition to ActivityManagerService.  [Siim Sammul]
+  - Add the ability to reset dropbox rate limiter with a shell command.  [Siim Sammul]
+  - Use registerSystemDefaultNetworkCallback to listen underlying network  [lucaslin]
+  - Remove the restricted user enforcement in getAppExclusionList  [chiachangwang]
+  - NetworkService: quitSafely() on onDestroy()  [Aswin Sankar]
+  - [DO NOT MERGE] Fix bugs with changing service gesture detection state.  [Ameer Armaly]
+  - [DO NOT MERGE] AccessibilityInputFilter: retain service gesture detection state when rebuilding.  [Ameer Armaly]
+  - Stops updating A11yUserState on ACTION_USER_PRESENT.  [Daniel Norman]
+  - Fix the logic of parsing profilebootclasspath flags.  [Jiakai Zhang]
+  - [Bugfix]fix NullPointException when PackageInfo's verifiers is null  [Wen Zhang]
+  - fix lost old callback when continuous call requestRenderAndNotify  [Bowen Li]
+  - Return no optmization info for package "android".  [Jiakai Zhang]
+  - Fix display size calculations in large screen (2/3)  [Yunfan Chen]
+  - CursorWindow_test: fix leaks  [George Burgess IV]
+  - Enable shrinking for EasterEgg  [Jared Duke]
+  - Syncronize frameowrk and ImsStack operation for ImsFeatureStatusCallback.  [virkumar]
+  - Fix NPE in SystemUI  [Ashok Mutyala]
+  - SystemUI: Add a config for delaying doze wake-up  [minaripenguin37]
+  - Services: WM: Boost critical UI animations  [minaripenguin37]
+  - udfps: Boost on fingerprint down  [minaripenguin37]
   - SystemUI: Redesign reticker notification  [minaripenguin37]
   - SystemUI: Adjust large double-line clock offsets  [minaripenguin37]
   - libandroid_defaults: use whole program vtables lto optimization  [John Galt]
@@ -340,7 +421,6 @@
   - vulkan: respect consumer default dataspace upon PASS_THROUGH  [Yiwei Zhang]
   - Allow PASS_THROUGH colorspace with R5G6B5, R16G16B16A16, A2B10G10R10  [Jason Macnak]
   - Allow use of PASS_THROUGH colorspace with RGBA8  [Lingfeng Yang]
-  - SF: Bring back support for disabling backpressure propagation  [Adithya R]
   - Use dalvik.vm.background-dex2oat-* system properties for background jobs.  [Martin Stjernholm]
   - Fix SerializeFileDescriptor.  [Florian Mayer]
   - autogenerated reformatting by bpfmt  [Alix]
@@ -379,6 +459,7 @@
   - Gamespace: Cleanup strings for translations  [minaripenguin37]
 
   * android_packages_apps_Launcher3
+  - Launcher3: Fix google icon crash  [minaripenguin37]
   - Launcher3: Taskbar: Follow light/dark settings  [minaripenguin37]
   - Launcher3: Fix taskbar all apps background  [minaripenguin37]
   - quickstep: use colorSurface on overview buttons bg  [hydrangea07]
@@ -496,6 +577,9 @@
   * android_packages_services_Telecomm
   - Merge tag 'android-13.0.0_r14' into thirteen  [hydrangea07]
 
+  * android_system_core
+  - rootdir: Add sysfs permissions for pocket bridge  [Chris Lahaye]
+
   * android_system_media
   - Add AUDIO_FORMAT_APTX_ADAPTIVE_{QLEA|R4}  [Mikhail Naganov]
   - audio: Reserve audio format constant for APTX QLEA  [Sai Priyanka Thirukkovela]
@@ -517,7 +601,9 @@
   - addons: UDFPS icons: Add one piece udfps icons  [xpirasians]
 
   * android_vendor_rice
+  - rice: update changelog for 8.0  [minaripenguin37]
   - rice: version 8.0 update  [minaripenguin37]
+  - overlay: Remove screen-off delay overrides  [minaripenguin37]
   - config: Bump fingerprints/description overrides for November ASB  [minaripenguin37]
   - config: Restore FaceUnlock  [jhenrique09]
   - rice: Bump to 8.0  [minaripenguin37]
