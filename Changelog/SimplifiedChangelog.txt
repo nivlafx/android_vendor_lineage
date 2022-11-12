@@ -17,9 +17,11 @@ SQUASH = squashed changes
 * Code linaro inspired boost/performance improvements
   - Boost gestures flings
   - Improved renderthread top-app boosting.
+  - Samsung and code linaro's scaling improvements
 * Enable/Disable combined signal icons at runtime
 * Fixed delayed charging animation transition
 * Hide IME space feature (only for gesture navigation)
+* Introduce Scarlet assistant idle manager [Dil3mm4]
 * Implemented google beta icons to AOSP Contacts, AOSP Dialer and  AOSP Messaging app
 * Imported more custom fonts
   - Apice outline
@@ -44,7 +46,7 @@ SQUASH = squashed changes
 * Quicksettings improvements:
   - retuned qs tile paddings
   - QS Outline style improvements
-* Redesign Reticker notification to OneUI 4.0 brief pop-up notification style
+* Reworked Reticker notification style and animation [Trishiraj]
 * Resolved minor UI/UX inconsistencies (oversized icons, gaps, typos etc.) 
 * SushiLauncher
   - Taskbar improvements
@@ -60,14 +62,19 @@ SQUASH = squashed changes
   - Introducing rice volume style - design made by Not_ayan99
 
 ==== Cherry-picked Additions - changes we've cherry-picked from other projects ==== 
-* AOD tile improvements [shagba913|jhonboy121]
+* AOD/Ambient fixes and improvements [shagba913|jhonboy121|neobuddy89|Ido Ben-Hur|Demon000]
 * App Lock Feature - [jhonboy121]
 * Enabled QR scanner shorcut [ghostrider-reborn]
 * Face Unlock feature - [jhenrique09|vjspranav|Dil3mm4|libxzr]
+* Flashlight blink on incoming calls [PMS22|Ido Ben-Hur|neobuddy89]
 * Force fullscreen feature reimplementation - [jhenrique09|cjh1249131356]
 * Keyguard AOD battery bar [maxwen|spezzi77]
 * LineageOS source upstream [LineageOS Team]
+* Make Lens work without independent package installed  [cjh1249131356]
+* Preferred network tile  [cjh1249131356]
 * Reticker fixes and improvements [cjh1249131356|Genkzsz11|ariffjenong]
+* Sensor block feature [simao Gomes Viana|LorDClockaN|Ali B|Hikari-no-Tenshi|calebcabob]
+* SleepMode Tile [cjh1249131356|Anushek Prasal]
 * SushiLauncher improvements
   - Allow locking recent tasks [SagarMakhar]
   - Fixed hotseat padding when taskbar is enabled [neobuddy89]

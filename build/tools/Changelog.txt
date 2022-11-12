@@ -1,5 +1,5 @@
 ===================================
-  Source Changes as of 11-11-2022
+  Source Changes as of 11-13-2022
 ===================================
 
   * android
@@ -22,7 +22,6 @@
   - Clear profile when switching between boot image profile and app profile  [Jiakai Zhang]
   - art_cc_defaults: use whole program vtables lto optimization  [John Galt]
   - ART: Add static helpers for ArtMethod's access flags.  [Vladimir Marko]
-  - Reland "Make compiler/optimizing/ symbols hidden."  [Vladimír Marko]
   - Minor nterp improvements.  [Vladimir Marko]
   - Don't cache a field if storing to it can throw.  [Nicolas Geoffray]
   - Remove deprecated code on obsolete method.  [Nicolas Geoffray]
@@ -32,21 +31,12 @@
   - ART: Add regression test for obsolete crash.  [Vladimir Marko]
   - Make LoadMethod{Handle,Type} instruction throwing.  [Nicolas Geoffray]
   - ANDROID: optimization of gc loading in ReclaimPhase  [Liujie Xie]
-  - Don't fetch shorty when there are no listeners and  deopt isn't required  [Mythri Alle]
   - Make periodic loop optimization safe from overflow  [Santiago Aboy Solanes]
-  - Update method exit hooks from JITed code to not use Stack visitor  [Mythri Alle]
   - Skip method unwind callbacks if exception was thrown by method exit  [Mythri Alle]
   - Remove obsolete comments about fences  [Hans Boehm]
   - arm: Fix build for TABLELOOKUP GC.  [Vladimir Marko]
   - arm: Rewrite `art_quick_aput_obj`.  [Vladimir Marko]
-  - Reland "Ensure we initialize before pushing the method invoked."  [Nicolas Geoffray]
-  - Run method entry callbacks for all methods on the stack  [Mythri Alle]
-  - Return early after initializing non-invokable methods  [Mythri Alle]
-  - Correctly handle non-invokable methods in InitializeMethodsCode  [Mythri Alle]
-  - Don't request a deopt if caller isn't async deoptimizeable  [Mythri Alle]
-  - Reland "Introduce a flag to check if JITed code has instrumentation support"  [Mythri Alle]
   - Use mutator lock for deoptimized_methods_  [Mythri Alle]
-  - Reland^2 "Don't use instrumentation stubs for native methods in debuggable"  [Mythri Alle]
   - Report DexPcMoved events only when required  [Mythri Alle]
   - Move the creation of JitZygoteDoneCompilingTask out of any loop.  [Nicolas Geoffray]
   - Make the notification of JIT zygote completion its own task.  [Nicolas Geoffray]
@@ -54,15 +44,12 @@
   - Don't disable JIT GC when instrumentation is enabled  [Mythri Alle]
   - Fix a linter issue in instrumentation.cc  [Mythri Alle]
   - Update implementation of method unwind callbacks  [Mythri Alle]
-  - Reland^3 "Don't use AOT code for native methods for java debuggable runtime"  [Mythri Alle]
-  - Reland "Add additional checks for ArtMethod::GetOatQuickMethodHeader"  [Mythri Alle]
   - Remove unused this in method unwind callback  [Mythri Alle]
   - Use instrumentation stub if required when undeoptimizing a method  [Mythri Alle]
   - Add a phenotype flag to disable compact dex in dex2oat.  [Martin Stjernholm]
   - Remove debugging code.  [Nicolas Geoffray]
   - Remove TryRemovingNullCheck from LSE  [Santiago Aboy Solanes]
   - Add more checks in the presence of file corruption.  [Nicolas Geoffray]
-  - Correctly delete all uses when building up the domination graph  [Santiago Aboy Solanes]
   - Remove instructions from dead blocks when building the dominator tree  [Santiago Aboy Solanes]
   - Update the successor's Phis in RemoveDeadBlocks  [Santiago Aboy Solanes]
   - Improve DCE's SimplifyAlwaysThrows regarding Invoke location  [Santiago Aboy Solanes]
@@ -74,11 +61,9 @@
   - Fix typo inversion in GenerateLastValueLinear  [Santiago Aboy Solanes]
   - Extend timeout for the compilation job  [Alan Stokes]
   - ART: Remove duplicated access modifier in OptimizingCompiler  [Hari Limaye]
-  - Reland "Propagating values from if clauses to its successors"  [Santiago Aboy Solanes]
   - Don't apply backoff time if the last compilation succeeded.  [Jiakai Zhang]
   - Skip acquiring block-lock in BumpPointerSpace::AllocThreadUnsafe  [Lokesh Gidra]
   - Fix gtest failures due to userfaultfd GC  [Lokesh Gidra]
-  - [PARTIAL] Reland "Put queued compilations in sets."  [Nicolas Geoffray]
   - Generate selects for nested ternary operators  [Santiago Aboy Solanes]
   - Wait for JIT threads to be created in ASAN builds  [Mythri Alle]
   - Specialize `DefaultEmptyFn` for `std::string`.  [Vladimir Marko]
@@ -180,6 +165,9 @@
 
   * android_external_arm-optimized-routines
   - Merge branch 'master' into thirteen  [minaripenguin37]
+  - pl/math: Fix minus zero in vector expm1  [Joe Ramsay]
+  - pl/math: Fix SVE mathbench wrappers  [Joe Ramsay]
+  - Merge branch 'master' into thirteen  [minaripenguin37]
   - pl/math/test: Simplify ulp and bench macros  [Joe Ramsay]
   - pl/math: Add vector/Neon expm1  [Joe Ramsay]
   - pl/math: Add scalar expm1  [Joe Ramsay]
@@ -194,8 +182,10 @@
   - pl/math: Update ULP thresholds for atan/atan2  [Joe Ramsay]
   - pl/math: Add scalar expm1f  [Joe Ramsay]
   - pl/math: Update ULP threshold for erfc (all variants) and scalar log1p  [Joe Ramsay]
+  - pl/math: Update ULP threshold for Neon log2  [Pierre Blanchard]
 
   * android_frameworks_av
+  - cameraserver: clear all requests and signal mRequestSignal from RequestThread during disconnect().  [Jayant Chowdhary]
   - Updated max rotational velocity of head tracking to 0.8 rad/s for smooth auto-recentering  [Nikhil Bhanu]
   - DNM Revert "Camera: Add support for readout timestamp"  [Pranav Vashi]
   - Pause faster during audio underrun  [Brian Lindahl]
@@ -208,6 +198,40 @@
   - Fix errorprone warnings that should be errors  [Cole Faust]
 
   * android_frameworks_base
+  - SystemUI: Improve reticker animation  [Trishiraj]
+  - SystemUI: Sync with font overlay changes  [minaripenguin37]
+  - Fix erroneous self deletion on SkImage creation failure  [Nolan Scobie]
+  - base: Introduce Scarlet assistant idle manager [1/2]  [Dil3mm4]
+  - base: Fix scheduled AOD/Sleep mode  [cjh1249131356]
+  - [SQUASH]base: Allow scheduling always on display [1/2]  [Ido Ben-Hur]
+  - SleepMode: Improve location mode logic  [cjh1249131356]
+  - base: Always turn on sensors when disabling sleep mode  [cjh1249131356]
+  - base: Introduce automated Sleep Mode [1/2]  [Anushek Prasal]
+  - SystemUI: Introduce preferred network tile  [cjh1249131356]
+  - SystemUI: Nuke oriented navbar handle  [Ido Ben-Hur]
+  - SystemUI: NavigationHandle: Don't show on keyguard or doze  [Ido Ben-Hur]
+  - SystemUI: Make Lens work without independent package installed  [cjh1249131356]
+  - bootanimation: Always use normal bootanimation  [jhenrique09]
+  - core: Port code linaro's scaling changes  [minaripenguin37]
+  - Samsung Dynamic Surface Scaling Solution: Display infor & Metrics classes  [trang.nthi]
+  - Samsung Dynamic Surface Scaling Solution: Resource system classes  [trang.nthi]
+  - [BugFix] Fix the NullPointerException in Android S Version:mServicesData  [李欢欢]
+  - SystemUI: Perform soft reboot when enabling combined signal icons  [minaripenguin37]
+  - fixup! [1/2] Statusbar Clock background chip  [StarkDroid]
+  - SystemUI: Relocate misplaced dimens  [minaripenguin37]
+  - SystemUI: Improve slice view paddings for new specs  [minaripenguin37]
+  - base: Add DND & Rate settings to flash on call [1/3]  [Ido Ben-Hur]
+  - base: Allow to flash on call only when entirely silent [1/3]  [Ido Ben-Hur]
+  - Add Flashlight blink on incoming calls [1/3]  [PMS22]
+  - Make sensor block package list configurable [1/2]  [Hikari-no-Tenshi]
+  - base: Add Accelerometer and Linear Acceleration sensors in blocking list  [HolyAngel]
+  - Settings: make SensorBlock readable by non-system apps  [Ali B]
+  - FWB: Sensor block per-package switch (1/2)  [LorDClockaN]
+  - SystemSensorManager: sensor block per-package  [Simao Gomes Viana]
+  - DozeSensors: only use proximity sensor if supported  [Demon000]
+  - [Bugfix] Fix the problem that the home key can not work in some cases.  [xi yu]
+  - Allow tuning ambient display with sensors [1/3]  [Pranav Vashi]
+  - base: Make NavigationBar to use Hidden IME Space only on gesture bar  [KrutosVIP]
   - base: Add bool to enable/disable doze by default  [Pranav Vashi]
   - UdfpsController: make sure to continue with onAcquired even when pulsing  [jhonboy121]
   - Revert "udfps: Trigger onFingerDown with regular action down events too"  [Anay Wadhera]
@@ -414,9 +438,6 @@
   - SystemUI: Play all charging animator sets at the same time  [hydrangea07]
   - SystemUI: Bring-in nothing breathing fingerprint and UDPS animations  [minaripenguin37]
 
-  * android_frameworks_libs_systemui
-  - iconloaderlib: Support BitmapDrawable for themed icons  [Pranav Vashi]
-
   * android_frameworks_native
   - vulkan: respect consumer default dataspace upon PASS_THROUGH  [Yiwei Zhang]
   - Allow PASS_THROUGH colorspace with R5G6B5, R16G16B16A16, A2B10G10R10  [Jason Macnak]
@@ -441,6 +462,7 @@
   - audio: Add audio_policy_configuration.xsd for the parser  [Mikhail Naganov]
 
   * android_lineage-sdk
+  - SDK: Do not enable SystemUI restart action by default  [minaripenguin37]
   - sdk: Add aux camera related resources to config.xml  [LuK1337]
   - sdk: Introduce org.lineageos.platform.resources target  [LuK1337]
   - sdk: Use `/>` instead of `<x></x>` where applicable  [LuK1337]
@@ -459,6 +481,13 @@
   - Gamespace: Cleanup strings for translations  [minaripenguin37]
 
   * android_packages_apps_Launcher3
+  - Launcher3: Restrict minimum icon size to 60  [minaripenguin37]
+  - launcher3: Fix rtl layout error  [Leonardo Hvang]
+  - Fix errorprone warnings that should be errors  [Cole Faust]
+  - fix: Launcher3 AbsSwipeUpHandler debug_state overflow crash  [liyong]
+  - Revert "Launcher3: Do not attach cleanupScreenshot() to frame update event"  [minaripenguin37]
+  - Launcher: Actually fix the all apps search bar  [Adithya R]
+  - Launcher3: Improve glance view paddings  [minaripenguin37]
   - Launcher3: Fix google icon crash  [minaripenguin37]
   - Launcher3: Taskbar: Follow light/dark settings  [minaripenguin37]
   - Launcher3: Fix taskbar all apps background  [minaripenguin37]
@@ -492,6 +521,13 @@
   - Messaging: Bring in new google messaging icon  [minaripenguin37]
 
   * android_packages_apps_RiceDroidSettings
+  - rice: Sync with font overlay changes  [minaripenguin37]
+  - rice: Update combined signal icons toggle string  [minaripenguin37]
+  - rice: Doze settings improvements  [minaripenguin37]
+  - rice: Introduce AppListPreference for a much cleaner look  [calebcabob]
+  - rice: Add back flashlight notification feature  [Pranav Vashi]
+  - rice: Import PackageListAdapter  [sb6596]
+  - Allow tuning ambient display with sensors [2/3]  [Pranav Vashi]
   - rice: Make combined signal icons configurable at runtime [2/2]  [minaripenguin37]
   - rice: Add more fonts to date/clock customizations  [minaripenguin37]
   - rice: default -> follow system font  [minaripenguin37]
@@ -514,6 +550,18 @@
   - rice: pulse: Fix lockscreen pulse default value  [minaripenguin37]
 
   * android_packages_apps_Settings
+  - [SQUASH] Settings: Allow scheduling always on display [2/2]  [Ido Ben-Hur]
+  - Link smallest width options in display settings  [Subhajeet Muhuri]
+  - Use default letter spacing for category titles  [Danny Lin]
+  - Power: Introduce Scarlet assistant idle manager [2/2]  [minaripenguin37]
+  - Settings: Introduce automated Sleep Mode [2/2]  [Anushek Prasal]
+  - DisplaySettings: font size in 5% steps from 80% to 130%  [Jean-Pierre Rasquin]
+  - Settings: Utilize our AppListPreference with Sensor Blocking pref  [calebcabob]
+  - Settings: BlockSensors: Fix/update the way Footer info is added  [calebcabob]
+  - Settings: Avoid NPE when adding/removing highlight background  [minaripenguin37]
+  - Settings: Make sensor block package list configurable [2/2]  [Hikari-no-Tenshi]
+  - Settings: Sensor block per-package switch [2/2]  [LorDClockaN]
+  - Allow tuning ambient display with sensors [3/3]  [Pranav Vashi]
   - Settings: Add a wallpaper scrim to about phone banners  [minaripenguin37]
   - Settings: Disable hide IME space feature by default  [minaripenguin37]
   - Settings: Update package details to match S style  [Mukul Dhir]
@@ -571,10 +619,35 @@
   - Settings: Initial implementation of FeatureFactoryImpl from Pixel  [jhenrique09]
   - Revert "Utilize a Different Preference for Storage"  [minaripenguin37]
 
+  * android_packages_apps_Updater
+  - Updater: Initial riceDroid changes  [minaripenguin37]
+  - Correct changelog URL (#41)  [Max]
+  - Updater: Point 13.0 sources  [Pranav Vashi]
+  - New translations (#40)  [Lup Gabriel]
+  - Update Crowdin configuration file  [Lup Gabriel]
+  - Updater: Move strings for translation  [Pranav Vashi]
+  - Revert "Updater: layout: activity_updates: add spacing.."  [Pranav Vashi]
+  - Updater: Rework drawables for support links  [Pranav Vashi]
+  - Updater: Update parsed info whenever data is refreshed  [Pranav Vashi]
+  - Updater: Properly add visible strings  [Pranav Vashi]
+  - Updater: add support links and some more info  [Lup Gabriel]
+  - Updater: Use headline font for activity header  [Pranav Vashi]
+  - Updater: adapt to new changelog url  [Lup Gabriel]
+  - Updater: Hide recovery update option by default  [Pranav Vashi]
+  - Updater: Nuke Lineage's website on installation blocked dialog  [shagbag913]
+  - Updater: Initial adaption for crdroid  [Lup Gabriel]
+  - Updater: Change package name to avoid conflict  [Pranav Vashi]
+  - Updater: add support for local updates  [Joey]
+  - Ship as crDroid based on LOS  [Pranav Vashi]
+
   * android_packages_modules_Wifi
   - Merge tag 'android-13.0.0_r14' into thirteen  [minaripenguin37]
 
   * android_packages_services_Telecomm
+  - Fix few issues with Blink with call  [Pranav Vashi]
+  - Telecomm: Add DND & Rate settings to flash on call [2/3]  [Ido Ben-Hur]
+  - Telecomm: Allow to flash on call only when entirely silent [2/3]  [Ido Ben-Hur]
+  - Telecomm: Add Flashlight blink on incoming calls [2/3]  [Shripal17]
   - Merge tag 'android-13.0.0_r14' into thirteen  [hydrangea07]
 
   * android_system_core
@@ -594,6 +667,7 @@
   - update_engine: Allow backup tool to run in user builds  [Pranav Vashi]
 
   * android_vendor_addons
+  - addons: Import Evolve and evo sans fonts  [minaripenguin37]
   - addons: Add font overlays for the new keyguard specs  [minaripenguin37]
   - QS Styles: Improve QSOutline style  [minaripenguin37]
   - Merge pull request #1 from ralph950412/thirteen  [minaripenguin37]
@@ -601,6 +675,9 @@
   - addons: UDFPS icons: Add one piece udfps icons  [xpirasians]
 
   * android_vendor_rice
+  - rice: Sync with the latest source changes (11/12/22 PST)  [minaripenguin37]
+  - build: Update build version for createjson generation  [Pranav Vashi]
+  - kernel: do not hard-code LD and AR when KERNEL_TOOLCHAIN is set  [Chenyang Zhong]
   - rice: update changelog for 8.0  [minaripenguin37]
   - rice: version 8.0 update  [minaripenguin37]
   - overlay: Remove screen-off delay overrides  [minaripenguin37]
