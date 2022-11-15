@@ -209,6 +209,13 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
     SystemUI
 
+ifneq ($(wildcard vendor/google/modules/.),)
+# Flatten APEXs for performance
+OVERRIDE_TARGET_FLATTEN_APEX := true
+# This needs to be specified explicitly to override ro.apex.updatable=true from
+# # prebuilt vendors, as init reads /product/build.prop after /vendor/build.prop
+PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
+endif
 
 # Dedupe VNDK libraries with identical core variants
 TARGET_VNDK_USE_CORE_VARIANT := true
