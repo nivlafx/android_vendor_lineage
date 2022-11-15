@@ -209,6 +209,10 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
     SystemUI
 
+# Use a generic profile based boot image by default
+PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
+PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := art/build/boot/boot-image-profile.txt
+
 ifeq ($(TARGET_SUPPORTS_64_BIT_APPS), true)
 # Use 64-bit dex2oat for better dexopt time.
 PRODUCT_PROPERTY_OVERRIDES += \
