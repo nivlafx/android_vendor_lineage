@@ -1,5 +1,5 @@
 ===================================
-  Source Changes as of 11-18-2022
+  Source Changes as of 11-19-2022
 ===================================
 
   * android
@@ -175,6 +175,7 @@
   - Explicitly madvise boot image oat files  [Jared Duke]
 
   * android_bionic
+  - Give init visibility into bionic headers.  [Florian Mayer]
   - Mangle the pointers stored in PointerData.  [Christopher Ferris]
   - Modify path for python clang support package  [Pat Tjin]
   - Failures to parse SYSCALLS.TXT-like files should be errors.  [Elliott Hughes]
@@ -312,13 +313,15 @@
   - pl/math: Update ULP thresholds for atan/atan2  [Joe Ramsay]
   - pl/math: Add scalar expm1f  [Joe Ramsay]
   - pl/math: Update ULP threshold for erfc (all variants) and scalar log1p  [Joe Ramsay]
-  - pl/math: Update ULP threshold for Neon log2  [Pierre Blanchard]
 
   * android_external_jemalloc-new
   - jemalloc_internal_types.h: Use alloca if __STDC_NO_VLA__ is defined  [Paul Smith]
   - Enable fast thread locals for dealloc-only threads.  [Qi Wang]
 
   * android_frameworks_av
+  - MediaCodec: manage resources for sw video codecs  [Girish]
+  - ACodec: Block setSurface during OutputPortSettingsChangedState  [Sungtak Lee]
+  - C2BqBuffer: resolve 3 way deadlock  [Sungtak Lee]
   - libstagefright_writer_fuzzer : Bug Fix  [Ayushi Khopkar]
   - Fix arguments checking in AudioSystem::canBeSpatialized  [Ram Mohan]
   - audioflinger: fix -Wdefaulted-function-deleted warning.  [Krzysztof Kosiński]
@@ -676,6 +679,7 @@
   - iconloaderlib: Invalidate icon cache between OS releases  [Daniel Micay]
 
   * android_frameworks_native
+  - Set the maxImageExtent for vk wsi based on currentExtent  [Trevor David Black]
   - Fix RpcSession::setupPreconnectedClient  [Frederick Mayle]
   - libbinder: fix hanging wait in RpcSession  [Andrei Homescu]
   - Fix gpuservice_unittest mem leaks  [Vova Sharaienko]
@@ -979,6 +983,17 @@
   - Merge tag 'android-13.0.0_r14' into thirteen  [hydrangea07]
 
   * android_system_core
+  - Fix module-file name collisions  [Cole Faust]
+  - sh_binary_host for 'adb-remount-test.sh'.  [jiajia tang]
+  - Added libinit_headers to Android.bp  [Devendra Singhi]
+  - init: Fix the implementation of the task_profiles keyword  [Bart Van Assche]
+  - init: skip cgroup/task_profiles configuration if cgroups are disabled  [Nikita Ioffe]
+  - [MTE] Add device config to control upgrade time  [Florian Mayer]
+  - [MTE] only upgrade to SYNC mode for MTE crashes  [Florian Mayer]
+  - Add permissive MTE mode.  [Florian Mayer]
+  - Upgrade MTE to SYNC after ASYNC crash.  [Florian Mayer]
+  - init: Apply the NormalIoProfile when creating a service  [Bart Van Assche]
+  - init: Reduce the number of system calls  [Bart Van Assche]
   - Fix scudo fault address processing.  [liyong]
   - Fix incorrect use of TEMP_FAILURE_RETRY  [Yi Kong]
   - sparse_fuzzer: Bug fix  [Devendra Singhi]
