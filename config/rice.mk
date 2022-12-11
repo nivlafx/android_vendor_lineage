@@ -146,9 +146,9 @@ PRODUCT_COPY_FILES += \
    vendor/lineage/prebuilt/etc/permissions/privapp-permissions-lineage-system.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-lineage-system.xml
 
 ifeq ($(TARGET_USE_PIXEL_FINGERPRINT), true)
-BUILD_FINGERPRINT := "google/raven/raven:13/TP1A.221105.002/9080065:user/release-keys"
+BUILD_FINGERPRINT := "google/raven/raven:13/TQ1A.221205.011/9244662:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="raven-user 13 TP1A.221105.002 9080065 release-keys"
+    PRIVATE_BUILD_DESC="raven-user 13 TQ1A.221205.011 9244662 release-keys"
 
 endif
